@@ -1,0 +1,23 @@
+{
+  "name": "Expense-Manager",
+  "version": "0.0.0",
+  "description": "Application to Manage Shared Expenses",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harshssd/Expense-Manager.git"
+  },
+  "author": "Harsha HS",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/harshssd/Expense-Manager/issues"
+  },
+  "dependencies": {
+    "express": "~4.9.6",
+    "mongoose": "~3.8.17",
+    "body-parser": "~1.9.0"
+  }
+}
