@@ -10,7 +10,7 @@ var GroupExpenseSchema = new Schema({
     members : [ Member ],
     Expenses : [{
         amount : Number,
-        paidBy : Object,
+        paidBy : String,
         cleared : Boolean,
         details : String
     }]
