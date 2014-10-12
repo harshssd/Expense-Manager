@@ -1,5 +1,5 @@
 {
-  "name": "Expense-Manager",
+  "name": "shared-expenses",
   "version": "0.0.0",
   "description": "Application to Manage Shared Expenses",
   "main": "app.js",
