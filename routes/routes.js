@@ -8,10 +8,9 @@ module.exports = function(app) {
     
     //create a group with a default member
     app.post('/api/groups', function(req, res){
-        console.log(req.body);
         Group.create({
             groupName : req.body.groupName,
-            members : [{email: req.body.userEmail, name: req.body.userName, admin: true}]
+            members : [ req.body.admin ]
         }, function(err, groupDetails){
             if(err)
                 res.send(err);
@@ -51,7 +50,7 @@ module.exports = function(app) {
     //add member to the group
     app.put('/api/groups/:group_id/members', function(req, res){
         Group.findByIdAndUpdate(req.params.group_id, 
-                {$push: {members: {email: req.body.userEmail, name: req.body.userName, admin: req.body.isAdmin}}}, function(err, group){
+                {$push: { members: {email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName, admin: req.body.isAdmin}}}, function(err, group){
             if(err)
                 res.send(err);
             res.json(group);
@@ -71,9 +70,9 @@ module.exports = function(app) {
     app.post('/api/groups/:group_id/expenses', function(req, res){
         Expense.create({
             amount : req.body.amount,
-            paidBy : req.body.userPaidEmail,
+            paidBy : req.body.paidEmail,
             createdOn : req.body.date,
-            createdBy : req.body.userEnteredEmail,
+            createdBy : req.body.enteredEmail,
             cleared : req.body.isCleared,
             description : req.body.description
         }, function(err, expense) {

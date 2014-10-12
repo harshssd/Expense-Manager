@@ -14,7 +14,8 @@ var GroupSchema = new Schema({
 
 var MemberSchema = new Schema({
     email : String,
-    name : String,
+    firstName : String,
+    lastName : String,
     admin : Boolean
 });
 
