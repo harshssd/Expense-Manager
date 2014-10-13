@@ -54,7 +54,7 @@ module.exports = function(app) {
             if(err)
                 res.send(err);
             res.json(group);
-        })
+        });
     });
     
     //get all the members list
@@ -63,7 +63,17 @@ module.exports = function(app) {
             if(err)
                 res.send(err);
             res.json(members);
-        })
+        });
+    });
+    
+    //get all the groups of a particular user
+    app.get('/api/groups/email/:email', function(req, res){
+        console.log(req.params.email);
+        Group.find({'members.email' : req.params.email}, function(err, groups){
+            if(err)
+                res.send(err);
+            res.json(groups);
+        });   
     });
     
     //add expense

@@ -20,5 +20,9 @@ angular.module('groupController', [])
                     console.log(err);
                 });
         }
+        
+        $scope.signin = function(){
+
+        }
     
     });

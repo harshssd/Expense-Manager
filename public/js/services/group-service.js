@@ -10,6 +10,9 @@ angular.module('groupService', [])
             create: function(groupData) {
                 groupData.admin.admin = true;
                 return $http.post('/api/groups', groupData);   
+            },
+            getGroupData: function(groupData) {
+                   return $http.get('/api/groups', groupData);
             }
         }    
     });

@@ -16,6 +16,7 @@
     "url": "https://github.com/harshssd/Expense-Manager/issues"
   },
   "dependencies": {
+    "angular-route": "~1.2.x",
     "express": "~4.9.6",
     "mongoose": "~3.8.17",
     "body-parser": "~1.9.0"
